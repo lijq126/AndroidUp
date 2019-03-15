@@ -1,6 +1,7 @@
 package com.smartdot.androidup;
 
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -13,15 +14,17 @@ import com.smartdot.androidup.dummy.DummyContent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabLayoutActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
+public class CollapseActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
     private ViewPager viewPager;
     private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tab_layout);
+        setContentView(R.layout.activity_collapse);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        CollapsingToolbarLayout collapsingToolbarLayout =findViewById(R.id.collapse);
+        collapsingToolbarLayout.setTitle("android");
         setSupportActionBar(toolbar);
         final ActionBar ab = getSupportActionBar();
 //        ab.setDisplayHomeAsUpEnabled(true);
